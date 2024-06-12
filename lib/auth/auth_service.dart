@@ -42,18 +42,24 @@ class AuthService {
     return null;
   }
 
+
   Future<Map<String, dynamic>?> getUserData(String userId) async {
     try {
-      final userData =
-      await _firestore.collection('users').doc(userId).get();
+      final userData = await _firestore.collection('users').doc(userId).get();
       if (userData.exists) {
         return userData.data();
       }
     } catch (e) {
-      log("Error fetching user data: $e");
+      print("Error fetching user data: $e");
     }
     return null;
   }
+
+  Future<void> signOut() async {
+    await _auth.signOut();
+    return;
+  }
+
 
   Future<void> signout() async {
     try {

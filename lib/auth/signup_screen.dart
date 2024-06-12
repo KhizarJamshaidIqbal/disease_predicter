@@ -42,7 +42,7 @@ class _SignupScreenState extends State<SignupScreen> {
           key: _formKey,
           child: ListView(
             children: [
-              const SizedBox(height: 100),
+              const SizedBox(height: 60),
               const Text("Signup",
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.w500)),
               const SizedBox(height: 30),

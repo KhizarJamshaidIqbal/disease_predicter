@@ -1,8 +1,4 @@
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -10,6 +6,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -29,7 +26,7 @@ class HomeScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => PredictDiseaseScreen()),
+                          builder: (context) => const PredictDiseaseScreen()),
                     );
                   },
                   child: const Text(
@@ -81,7 +78,8 @@ class HomeScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => MedicineRecommendScreen()),
+                          builder: (context) =>
+                              const MedicineRecommendScreen()),
                     );
                   },
                   child: const Text(
@@ -107,7 +105,8 @@ class HomeScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => PrecautionsRecommendScreen()),
+                          builder: (context) =>
+                              const PrecautionsRecommendScreen()),
                     );
                   },
                   child: const Text(
@@ -145,6 +144,15 @@ class PredictDiseaseScreen extends StatelessWidget {
             fontSize: 20,
           ),
         ),
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
       body: const Padding(
         padding: EdgeInsets.all(8.0),
@@ -176,6 +184,15 @@ class TestRecommendScreen extends StatelessWidget {
             fontWeight: FontWeight.bold,
             fontSize: 20,
           ),
+        ),
+        leading:IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
       ),
       body: const Padding(
@@ -210,6 +227,15 @@ class MedicineRecommendScreen extends StatelessWidget {
             fontWeight: FontWeight.bold,
             fontSize: 20,
           ),
+        ),
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
       ),
       body: Padding(
@@ -288,6 +314,15 @@ class PrecautionsRecommendScreen extends StatelessWidget {
             fontWeight: FontWeight.bold,
             fontSize: 20,
           ),
+        ),
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
       ),
       body: Padding(

@@ -41,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
           key: _formKey,
           child: ListView(
             children: [
-              const SizedBox(height: 100),
+              const SizedBox(height: 60),
               const Text("Login",
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.w500)),
               const SizedBox(height: 30),
