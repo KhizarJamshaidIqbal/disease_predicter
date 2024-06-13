@@ -46,7 +46,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.w500)),
               const SizedBox(height: 30),
               Center(child: Lottie.asset('assets/login.json', height: 300, width: 300)),
-              const Spacer(),
               const SizedBox(height: 50),
               CustomTextField(
                 validator: (value) {
@@ -71,15 +70,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 label: "Password",
                 controller: _password,
               ),
-              const SizedBox(height: 10), // Adjust the spacing
+              const SizedBox(height: 10),
               Align(
                 alignment: Alignment.centerRight,
-                child: TextButton( // Add a new TextButton for "Forgot Password"
+                child: TextButton(
                   onPressed: () => goToForgotPassword(context),
                   child: const Text("Forgot Password?", style: TextStyle(color: Colors.blue)),
                 ),
               ),
-              const Spacer(),
               const SizedBox(height: 20),
               SizedBox(
                 width: double.infinity,
@@ -97,7 +95,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: const Text("Signup", style: TextStyle(color: Colors.red)),
                 )
               ]),
-
               const SizedBox(height: 30),
             ],
           ),

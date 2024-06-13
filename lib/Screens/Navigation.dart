@@ -19,7 +19,7 @@ class _BottomBarCustomState extends State<BottomBarCustom> {
   var _currentIndex = 0;
   final listOfScreen = [
     const HomeScreen(),
-    const PredictScreen(),
+    PredictScreen(),
     const ProfileScreen(),
   ];
   final listOfAppBarTitle = ['Home', 'Predict Diseases', 'Profile'];
@@ -60,8 +60,8 @@ class _BottomBarCustomState extends State<BottomBarCustom> {
       child: _isLoading
           ? Center(child: CircularProgressIndicator())
           : Padding(
-            padding: const EdgeInsets.only(left: 10,right: 25),
-            child: Column(
+              padding: const EdgeInsets.only(left: 10, right: 25),
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Center(
@@ -100,7 +100,7 @@ class _BottomBarCustomState extends State<BottomBarCustom> {
                   ),
                 ],
               ),
-          ),
+            ),
     );
   }
 
@@ -143,7 +143,8 @@ class _BottomBarCustomState extends State<BottomBarCustom> {
                     color: Colors.white), // Set icon color to white
                 title: Text('Home',
                     style: TextStyle(
-                      fontSize: 18,fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
                         color: Colors.white)), // Set text color to white
                 onTap: () {
                   setState(() {
@@ -157,7 +158,8 @@ class _BottomBarCustomState extends State<BottomBarCustom> {
                     color: Colors.white), // Set icon color to white
                 title: Text('Predict Diseases',
                     style: TextStyle(
-                      fontSize: 18,fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
                         color: Colors.white)), // Set text color to white
                 onTap: () {
                   setState(() {
@@ -171,7 +173,8 @@ class _BottomBarCustomState extends State<BottomBarCustom> {
                     color: Colors.white), // Set icon color to white
                 title: Text('Profile',
                     style: TextStyle(
-                      fontSize: 18,fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
                         color: Colors.white)), // Set text color to white
                 onTap: () {
                   setState(() {
@@ -180,7 +183,6 @@ class _BottomBarCustomState extends State<BottomBarCustom> {
                   Navigator.pop(context);
                 },
               ),
-              
             ],
           ),
         ),

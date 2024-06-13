@@ -47,8 +47,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.w500)),
               const SizedBox(height: 30),
               Center(child: Lottie.asset('assets/signUp.json', height: 300, width: 300)),
-              const Spacer(),
-
+              const SizedBox(height: 50),
               CustomTextField(
                 hint: "Enter Name",
                 label: "Name",
@@ -101,7 +100,6 @@ class _SignupScreenState extends State<SignupScreen> {
                   return null;
                 },
               ),
-              const Spacer(),
               const SizedBox(height: 20),
               SizedBox(
                 width: double.infinity,
@@ -116,8 +114,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 const Text("Already have an account? "),
                 InkWell(
                   onTap: () => goToLogin(context),
-                  child:
-                      const Text("Login", style: TextStyle(color: Colors.red)),
+                  child: const Text("Login", style: TextStyle(color: Colors.red)),
                 )
               ]),
               const SizedBox(height: 30),
@@ -150,12 +147,11 @@ class _SignupScreenState extends State<SignupScreen> {
   _signup() async {
     if (_formKey.currentState?.validate() ?? false) {
       setState(() {
-        _isLoading =
-            true; // Set loading state to true when sign-up process begins
+        _isLoading = true; // Set loading state to true when sign-up process begins
       });
       try {
         final user = await _auth.createUserWithEmailAndPassword(
-            _email.text, _email.text, _password.text);
+            _name.text, _email.text, _password.text);
         if (user != null) {
           log("User Created Successfully");
           showSnackBar(context, "User Created Successfully", Colors.green);
@@ -170,8 +166,7 @@ class _SignupScreenState extends State<SignupScreen> {
             showSnackBar(context, "Email already in use", Colors.red);
           } else {
             // Handle other FirebaseAuth errors
-            showSnackBar(
-                context, "Sign up failed: ${error.message}", Colors.red);
+            showSnackBar(context, "Sign up failed: ${error.message}", Colors.red);
           }
         } else {
           // Handle other errors
@@ -179,8 +174,7 @@ class _SignupScreenState extends State<SignupScreen> {
         }
       } finally {
         setState(() {
-          _isLoading =
-              false; // Set loading state to false when sign-up process completes
+          _isLoading = false; // Set loading state to false when sign-up process completes
         });
       }
     }
